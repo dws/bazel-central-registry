@@ -14,3 +14,12 @@ tasks:
     bazel: ${{ bazel }}
     build_targets:
     - '@eigen//:eigen'
+  verify_targets_align:
+    name: Verify build targets with alignment configs
+    platform: ${{ platform }}
+    bazel: ${{ bazel }}
+    build_flags:
+    - '--@eigen//:EIGEN_MALLOC_ALREADY_ALIGNED=0'
+    - '--@eigen//:EIGEN_MAX_ALIGN_BYTES=16'
+    build_targets:
+    - '@eigen//:eigen'
