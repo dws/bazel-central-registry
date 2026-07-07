@@ -46,8 +46,8 @@ license(
 # set to that value.  Per doc/PreprocessorDirectives.dox, legal values are 0 or 1.
 int_flag(
     name = "EIGEN_MALLOC_ALREADY_ALIGNED",
-    make_variable = "EIGEN_MALLOC_ALREADY_ALIGNED_VALUE",
     build_setting_default = -1,
+    make_variable = "EIGEN_MALLOC_ALREADY_ALIGNED_VALUE",
 )
 
 config_setting(
@@ -59,8 +59,8 @@ config_setting(
 # set to that value.  Per doc/PreprocessorDirectives.dox, legal values are 0 or a power of two.
 int_flag(
     name = "EIGEN_MAX_ALIGN_BYTES",
-    make_variable = "EIGEN_MAX_ALIGN_BYTES_VALUE",
     build_setting_default = -1,
+    make_variable = "EIGEN_MAX_ALIGN_BYTES_VALUE",
 )
 
 config_setting(
@@ -152,6 +152,10 @@ cc_library(
         "//conditions:default": [],
     }),
     includes = ["."],
+    toolchains = [
+        ":EIGEN_MALLOC_ALREADY_ALIGNED",
+        ":EIGEN_MAX_ALIGN_BYTES",
+    ],
     visibility = ["//visibility:public"],
     deps = select({
         ":use_blas": [":blas"],
@@ -163,8 +167,4 @@ cc_library(
         ":use_lapacke_strict": [":lapacke"],
         "//conditions:default": [],
     }),
-    toolchains = [
-        ":EIGEN_MALLOC_ALREADY_ALIGNED",
-        ":EIGEN_MAX_ALIGN_BYTES",
-    ],
 )

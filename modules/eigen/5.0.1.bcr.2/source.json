@@ -8,7 +8,7 @@
     "integrity": "sha256-6cMm3IwFzR4ETHHzDxsuNKYWGjtuz0RdVrU/8WaePew=",
     "strip_prefix": "eigen-5.0.1",
     "overlay": {
-        "BUILD.bazel": "sha256-eJByO/Lk+pFygZVhPRfKKlU0qCpoj7gJnVh3uVVqKQI=",
+        "BUILD.bazel": "sha256-vNJ9YL9EUWgGOfM0C9d5+TKN23ocfMCnQvcvyVNwV+M=",
         "MODULE.bazel": "sha256-OTqbDfQ2wnY4dHHcoXErUtPQOXPx8/X+gGOFobH29LU="
     }
 }
