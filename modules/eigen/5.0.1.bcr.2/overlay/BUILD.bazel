@@ -42,8 +42,8 @@ license(
     license_text = "COPYING.MPL2",
 )
 
-# When set to a value other than the default, configure eigen with EIGEN_MALLOC_ALREADY_ALIGNED
-# set to that value.  Per doc/PreprocessorDirectives.dox, legal values are 0 or 1.
+# When set to a value other than the default, configure Eigen with EIGEN_MALLOC_ALREADY_ALIGNED
+# set to that value. Per doc/PreprocessorDirectives.dox, legal values are 0 or 1.
 int_flag(
     name = "EIGEN_MALLOC_ALREADY_ALIGNED",
     build_setting_default = -1,
@@ -55,8 +55,8 @@ config_setting(
     flag_values = {":EIGEN_MALLOC_ALREADY_ALIGNED": "-1"},
 )
 
-# When set to a value other than the default, configure eigen with EIGEN_MAX_ALIGN_BYTES
-# set to that value.  Per doc/PreprocessorDirectives.dox, legal values are 0 or a power of two.
+# When set to a value other than the default, configure Eigen with EIGEN_MAX_ALIGN_BYTES
+# set to that value. Per doc/PreprocessorDirectives.dox, legal values are 0 or a power of two.
 int_flag(
     name = "EIGEN_MAX_ALIGN_BYTES",
     build_setting_default = -1,
